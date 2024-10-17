@@ -3,7 +3,7 @@
 # Submission Date
 # Lab 06
 # Lab Section: 
-# Sources, people worked with, help given to: 
+# Sources, people worked with, help given to: Donovan Applehauns
 # your
 # comments
 # here
@@ -70,6 +70,20 @@ print(len(random_string)) # Print out the size for reference
 # Output which letter occurred the most 
 # Output which letter occurred the least 
 # Output what the percentage of the string each character is, again in alphabetical
+letters = []
+for character in random_string:
+    letters.append(character)
+letters.sort()
+print (letters)
+
+dictionary = {}
+for char in letters:
+    if char in dictionary.keys():
+        dictionary[char] = dictionary.get(char) + 1
+    else:
+        dictionary[char] = 1
+
+print (dictionary)
 
 #Tips and trick:
 # You can iterate through strings like you would a list
@@ -88,8 +102,8 @@ print(len(random_string)) # Print out the size for reference
 print("*"*75)
 # Output which letter occurred the most 
 
-most_occurred = ""
-least_occurred = ""
+most_occurred = "k"
+least_occurred = "n"
 
 print(f"The letter that occurred the most is {most_occurred}")
 print("*"*75)
@@ -98,3 +112,6 @@ print(f"The letter that occurred the most is {least_occurred}")
 print("*"*75)
 
 # Output what the percentage of the string each character is, again in alphabetical
+for key,value in dictionary.items():
+    thing = value/len(random_string)*100
+    print (f'{key} is {thing} percentage of random_string')
